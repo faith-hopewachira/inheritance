@@ -50,6 +50,26 @@ fun main() {
 
 
 
+    val human = Human("Faith",90,90.0)
+    human.eat(90)
+//    println(human.age)
+
+    val myUser = User("faith","hope","swa@gmail.com","fghjkl")
+    println(myUser.firstName)
+    println(myUser.email)
+
+    println(takesNames("faith","hope","hope"))
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -88,7 +108,7 @@ open class Person(var name: String,var age: Int){
 
 
 //INHERIT from person class
-class Banker(name: String, age: Int): Person(name,age){
+class Banker(name: String,  age: Int): Person(name,age){
 
 
     fun countMoney(notes: Array<Int>): Int {
@@ -137,7 +157,6 @@ class Doctor(name: String, age: Int): Person(name,age){
 
 //WE PUT THE NAME AND AGE AS THE PARAMETERS SINCE THE FARMER AND THE DOCTOR ARE PEOPLE WHO HAVE NAME AND AGE
 class Farmer(name: String, age: Int): Person(name,age){
-
 
     fun cultivateLand() {
         println("")
@@ -191,9 +210,6 @@ class Police(name: String,age: Int): Person(name, age){
     }
 
 
-
-
-
 }
 
 fun allSum(numbers: Array<Int>){
@@ -201,6 +217,55 @@ fun allSum(numbers: Array<Int>){
     println(nums)
 
 }
+
+
+class Human(name: String, age: Int, weight: Double){
+    fun eat(foodWeight: Int){
+        println ("I am eating $foodWeight kgs of food")
+//        println(weight + foodWeight)
+
+//        weight+=foodWeight
+
+    }
+
+    fun birthday(){
+//        age+=1
+
+    }
+
+
+}
+
+data class User(
+    var firstName: String,
+    var lastName: String,
+    var email: String,
+    var password: String
+
+)
+
+//Create a function that given an array below:
+//var cities = arrayOf("harare", "mumbai", "dodoma", "jakarta")
+//prints out the names of the cities in the correct grammatical case. (2 points)
+//fun titleCase(cities: Array<String>){
+//
+//
+//}
+
+
+//Create a function that takes in 3 names and
+// returns a string array containing all 3 names. (2 points)
+
+fun takesNames(name1: String, name2: String, name3: String): Array<String>{
+    var res = arrayOf(name1,name2,name3)
+    return res
+}
+
+//Create one function that is given the below array:
+//var numbers = arrayOf(32, 17,4,213,78,43,90,31,3,73,11,158,62)
+//(i) prints out the sum of the second and fifth elements (1 point)
+//(ii) prints out the index of 158  (1 point)
+//(iii) prints out the elements in ascending order (2 points)
 
 
 
